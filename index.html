@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite 1 Ano - Heloísa Sofia</title>
+    <link rel="icon" type="image/png" href="heloisa.png">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa-fundo: #fce1e4; /* Cor da imagem enviada */
+            --rosa-vibrante: #ff69b4;
+            --azul-bebe: #add8e6;
+            --dourado: #ffd700;
+            --soft-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--rosa-fundo);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            padding-bottom: 40px;
+            border: 10px solid white;
+            margin: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Balões Animados */
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            padding: 10px;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            z-index: -1;
+            opacity: 0.7;
+            animation: float-up linear infinite;
+        }
+
+        .balloon::after {
+            content: "▲";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 8px;
+            color: inherit;
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-50vh) rotate(10deg); }
+            100% { transform: translateY(-110vh) rotate(-10deg); opacity: 0; }
+        }
+
+        header {
+            background: radial-gradient(circle at top, #fff, transparent);
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .foto-heloisa {
+            width: 220px;
+            height: auto;
+            filter: drop-shadow(0 8px 20px rgba(255, 105, 180, 0.3));
+            animation: flutuar 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            border-radius: 20px;
+        }
+
+        @keyframes flutuar {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-12px) scale(1.02); }
+        }
+
+        h1 { 
+            font-family: 'Pacifico', cursive; 
+            color: var(--rosa-vibrante); 
+            margin: 15px 0 5px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 0 rgba(255, 105, 180, 0.1);
+        }
+
+        .tagline {
+            font-weight: 300;
+            color: #888;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .info { 
+            padding: 10px 30px; 
+            color: #666; 
+            background: rgba(252, 225, 228, 0.3);
+            margin: 0 30px 20px;
+            border-radius: 20px;
+        }
+        
+        .info p { margin: 10px 0; font-size: 0.95rem; }
+        .info b { color: var(--rosa-vibrante); font-weight: 600; }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 80%;
+            margin: 10px auto;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+        }
+
+        .btn-confirmar { background: linear-gradient(45deg, #25D366, #128C7E); color: white; }
+        .btn-local { background: linear-gradient(45deg, var(--azul-bebe), #90c8d8); color: white; }
+
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: sparkle-anim 2s infinite;
+        }
+
+        @keyframes sparkle-anim {
+            0% { transform: scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="particles-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -2;"></div>
+
+    <div class="container">
+        <header>
+            <img src="heloisa.png" alt="Heloísa Sofia" class="foto-heloisa">
+            <h1>Heloísa Sofia</h1>
+            <p class="tagline">✨ Meu 1º Aninho! ✨</p>
+        </header>
+
+        <div class="info">
+            <p>📅 <b>22 de Março de 2026</b></p>
+            <p>🕒 <b>Às 17:00h</b></p>
+            <p>📍 Av. do Turismo, 14164<br>Cond. Viva Vida Tarumã</p>
+        </div>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+do+Turismo,+14164,+Tarumã,+Manaus" target="_blank" class="btn btn-local">
+            📍 Localização no Maps
+        </a>
+
+        <a href="https://wa.me/5592981810272?text=Olá! Confirmo minha presença no aniversário da Heloísa Sofia!" target="_blank" class="btn btn-confirmar">
+            ✅ Confirmar Presença
+        </a>
+    </div>
+
+    <script>
+        function createBalloon() {
+            const container = document.getElementById('particles-container');
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            
+            // Variedade de cores festivas
+            const colors = ['#ff69b4', '#add8e6', '#ffd700', '#ffb6c1', '#f08080'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            balloon.style.backgroundColor = color;
+            balloon.style.color = color;
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.width = (Math.random() * 30 + 30) + 'px';
+            balloon.style.height = (parseFloat(balloon.style.width) * 1.2) + 'px';
+            balloon.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            
+            container.appendChild(balloon);
+            
+            setTimeout(() => {
+                balloon.remove();
+            }, 10000);
+        }
+
+        function createSparkle(e) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = (e.pageX - 5) + 'px';
+            sparkle.style.top = (e.pageY - 5) + 'px';
+            sparkle.style.width = sparkle.style.height = (Math.random() * 10 + 5) + 'px';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+
+        // Criar balões periodicamente
+        setInterval(createBalloon, 1500);
+
+        // Interatividade com o mouse/toque
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.8) createSparkle(e);
+        });
+
+        document.addEventListener('touchstart', (e) => {
+            createSparkle(e.touches[0]);
+        });
+
+        // Efeito inicial de confete
+        window.addEventListener('load', () => {
+            for(let i = 0; i < 15; i++) {
+                setTimeout(createBalloon, i * 200);
+            }
+        });
+    </script>
+</body>
+</html>
